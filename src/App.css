@@ -27,10 +27,6 @@
   opacity: 0.08;
 }
 
-.overview-bg {
-  background-image: url('/images/mohenjo-daro.jpg');
-}
-
 .section-with-bg .section-inner {
   position: relative;
   z-index: 1;
@@ -123,7 +119,8 @@
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('/images/hero-bg.jpg') center center / cover no-repeat;
+  background-size: cover;
+  background-position: center;
   filter: saturate(0.7) brightness(0.6);
   transform: scale(1.05);
   animation: heroZoom 20s ease infinite alternate;
@@ -515,7 +512,8 @@
 .legacy-bg-img {
   position: absolute;
   inset: 0;
-  background: url('/images/harappa.jpg') center center / cover no-repeat;
+  background-size: cover;
+  background-position: center;
   filter: brightness(0.2) saturate(0.5);
   transform: scale(1.05);
 }

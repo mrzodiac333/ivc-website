@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import './App.css'
 
+const img = (path) => `${import.meta.env.BASE_URL}images/${path}`
+
 /* ─── Sections data ─── */
 const cityData = [
   {
@@ -141,7 +143,7 @@ function App() {
 
       {/* ─── HERO ─── */}
       <section id="hero" className="hero">
-        <div className="hero-bg" />
+        <div className="hero-bg" style={{ backgroundImage: `url(${img('hero-bg.jpg')})` }} />
         <div className="hero-overlay" />
         <div className="hero-content">
           <p className="hero-label">The Bronze Age</p>
@@ -158,7 +160,7 @@ function App() {
 
       {/* ─── OVERVIEW ─── */}
       <Reveal id="overview" className="section-dark section-with-bg">
-        <div className="section-bg-img overview-bg" />
+        <div className="section-bg-img" style={{ backgroundImage: `url(${img('mohenjo-daro.jpg')})` }} />
         <div className="section-inner narrow">
           <h2 className="section-title">A Lost World</h2>
           <div className="section-sep" />
@@ -220,7 +222,7 @@ function App() {
               <p className="culture-text">{s.body}</p>
             </div>
             <div className="culture-visual">
-              <img src={i === 2 ? "/images/priest-king.jpg" : i === 3 ? "/images/seals.jpg" : i === 1 ? "/images/seals.jpg" : "/images/mohenjo-daro.jpg"} alt={s.title} className="culture-img" />
+              <img src={i === 2 ? img('priest-king.jpg') : i === 3 ? img('seals.jpg') : i === 1 ? img('seals.jpg') : img('mohenjo-daro.jpg')} alt={s.title} className="culture-img" />
             </div>
           </Reveal>
         ))}
@@ -248,7 +250,7 @@ function App() {
 
       {/* ─── LEGACY ─── */}
       <Reveal id="legacy" className="section-legacy">
-        <div className="legacy-bg-img" />
+        <div className="legacy-bg-img" style={{ backgroundImage: `url(${img('harappa.jpg')})` }} />
         <div className="legacy-overlay" />
         <div className="section-inner narrow" style={{ position: 'relative', zIndex: 1 }}>
           <h2 className="section-title">Enduring Legacy</h2>
